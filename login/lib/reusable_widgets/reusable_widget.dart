@@ -1,13 +1,14 @@
- import'package:flutter/material.dart';
-  Image logoWidget(String imageName) {
-    return Image.asset(
-      imageName,
-      fit: BoxFit.fitWidth,
-      width: 240,
-      height: 240,
-      color: Colors.white,
-    );
-  }
+import 'package:flutter/material.dart';
+
+Image logoWidget(String imageName) {
+  return Image.asset(
+    imageName,
+    fit: BoxFit.fitWidth,
+    width: 240,
+    height: 240,
+    color: Colors.black,
+  );
+}
 
 TextField reusableTextField(String text, IconData icon, bool isPasswordType,
     TextEditingController controller) {
@@ -36,9 +37,10 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
         ? TextInputType.visiblePassword
         : TextInputType.emailAddress,
   );
-} 
+}
 
-Container SignInSignUpButton(BuildContext context, bool isLogin, Function onTap) {
+Container SignInSignUpButton(
+    BuildContext context, bool isLogin, Function onTap) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 50,
