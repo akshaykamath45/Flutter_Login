@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "307225878234",
+    "project_id": "smokey-dough-signin",
+    "storage_bucket": "smokey-dough-signin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307225878234:android:4d20c0ec8cfed7f9c50fe3",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307225878234-j4f6r207u769rkvk1js2vro8kmee2fnv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.login",
+            "certificate_hash": "dfa067c1efa4d89934c1c94863e45ef80e85952e"
+          }
+        },
+        {
+          "client_id": "307225878234-mhingsajukee9dksa0f1pbgfppgroki4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBpMfjKoRmRtsplEwIboNp084WTsDSdq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307225878234-mhingsajukee9dksa0f1pbgfppgroki4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
