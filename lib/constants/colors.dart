@@ -5,9 +5,11 @@ const Color black = Color(0xFF0f172a);
 const Color white = Color(0xFFf9fafb);
 const Color grey = Color(0xFF6b7280);
 const Color greyLight = Color(0xFFd1d5db);
-const Color primaryColor = Color(0xFF880E4F);
+// const Color primaryColor = Color(0xFF880E4F);
+const Color primaryColor = Color(0xFFC03839);
 const Color transparent = Colors.transparent;
 const Color notWhite = Color(0xFFEDF0F2);
+const Color notBlack = Color(0xFF302E3D);
 
 Map<int, Color> color = {
   50: const Color.fromRGBO(136, 14, 79, .1),

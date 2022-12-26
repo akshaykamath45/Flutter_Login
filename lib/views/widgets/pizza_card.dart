@@ -21,6 +21,15 @@ class PizzaCardWidget extends StatelessWidget {
           title: Text(name),
           subtitle: Text(description),
           trailing: Text('Rs.$price'),
+          onTap: (() {
+            Navigator.pushNamed(
+              context, 
+              '/menu_item', 
+              arguments: {
+                'name': name, 
+                'description': description, 
+                'price': price}  );
+          }),
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smokey_dough/views/screens/home.dart';
+import 'package:smokey_dough/views/screens/menu_item.dart';
 import 'constants/strings.dart';
 import 'constants/colors.dart';
 
@@ -18,7 +19,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: themeColor,
       ),
-      home: const HomeScreenView(),
+      // home: const HomeScreenView(),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => const HomeScreenView(),
+        '/menu_item': (context) => const MenuItemScreenView(),
+      },
     );
   }
 }
