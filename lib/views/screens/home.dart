@@ -171,7 +171,10 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                         }),
                         itemCount: pizzaData.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            childAspectRatio: 0.5, crossAxisCount: 2),
+                            childAspectRatio: 0.64,
+                            mainAxisSpacing: 4,
+                            crossAxisSpacing: 6,
+                            crossAxisCount: 2),
                       ),
                     ],
                   ),
