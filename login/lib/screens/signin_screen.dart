@@ -10,6 +10,7 @@ import 'package:login/screens/signup_screen.dart';
 import 'package:login/utils/colors_utils.dart';
 
 import '../reusable_widgets/reusable_widget.dart';
+import '../services/firebase_services.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -48,55 +49,11 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 20,
                 ),
-           Center(
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 30),
-            child: ElevatedButton(
-              onPressed: () async {
-                await FirebaseServices().signInWithGoogle();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith((states) {
-                if (states.contains(MaterialState.pressed)) {
-                  return Colors.black26;
-                }
-                return Colors.white;
-              })),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/images/google.png",
-                      height: 40,
-                      width: 40,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    const Text(
-                      "Login with Gmail",
-                      style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      
                 reusableTextField("Enter Password", Icons.lock_outline, true,
                     _passwordTextController),
                 SizedBox(
                   height: 20,
                 ),
-
                 SignInSignUpButton(context, true, () {
                   FirebaseAuth.instance
                       .signInWithEmailAndPassword(
@@ -109,6 +66,53 @@ class _SignInScreenState extends State<SignInScreen> {
                     print("Error ${error.toString()}");
                   });
                 }),
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        await FirebaseServices().signInWithGoogle();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
+                      },
+                      style: ButtonStyle(backgroundColor:
+                          MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.pressed)) {
+                          return Colors.black26;
+                        }
+                        return Colors.white;
+                      })),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/google.png",
+                              height: 30,
+                              width: 30,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            const Text(
+                              "Login with G-Mail",
+                              style: TextStyle(
+                                  fontSize: 21,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black87),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 signUpOption()
               ],
             ),
