@@ -81,7 +81,8 @@ class Navbar extends StatelessWidget {
             leading: Icon(Icons.restaurant_menu),
             title: Text('Menu', style: GoogleFonts.notoSerif(fontWeight: FontWeight.w700, fontSize: 15)),
             onTap: () {
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushNamed(context, '/menu');
             },
           ),
           ListTile(
