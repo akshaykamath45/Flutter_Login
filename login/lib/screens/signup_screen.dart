@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:login/screens/home_screen.dart';
 import 'package:login/utils/colors_utils.dart';
+import 'package:lottie/lottie.dart';
 
 import '../reusable_widgets/reusable_widget.dart';
 
@@ -43,13 +44,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
             hexStringToColor("fa5537")
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: SingleChildScrollView(
+              //   child: Padding(
+              // padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
               child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
+            padding: EdgeInsets.fromLTRB(
+                20, MediaQuery.of(context).size.height * 0.1, 20, 0),
             child: Column(
               children: <Widget>[
-                const SizedBox(
-                  height: 20,
-                ),
+                // const SizedBox(
+                //   height: 0,
+                // ),
+                Lottie.asset('assets/animations/64809-pizza-loading.json'),
                 reusableTextField("Enter Username", Icons.person_outline, false,
                     _userNameTextController),
                 const SizedBox(
@@ -77,7 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });
-                })
+                }),
               ],
             ),
           ))),
