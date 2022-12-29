@@ -7,6 +7,7 @@ import 'package:login/utils/colors_utils.dart';
 import 'package:lottie/lottie.dart';
 
 import '../reusable_widgets/reusable_widget.dart';
+import '../services/firebase_services.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -58,17 +59,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 reusableTextField("Enter Username", Icons.person_outline, false,
                     _userNameTextController),
                 const SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
                 reusableTextField("Enter Email ID", Icons.person_outline, false,
                     _emailTextController),
                 const SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
                 reusableTextField("Enter Password", Icons.lock_outlined, true,
                     _passwordTextController),
                 const SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
                 SignInSignUpButton(context, false, () {
                   FirebaseAuth.instance
@@ -83,6 +84,50 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     print("Error ${error.toString()}");
                   });
                 }),
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 25),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        await FirebaseServices().signInWithGoogle();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
+                      },
+                      style: ButtonStyle(backgroundColor:
+                          MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.pressed)) {
+                          return Colors.black26;
+                        }
+                        return Colors.white;
+                      })),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/google.png",
+                              height: 25,
+                              width: 25,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            const Text(
+                              "Sign In with Google",
+                              style: TextStyle(
+                                  fontSize: 21,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black87),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ))),

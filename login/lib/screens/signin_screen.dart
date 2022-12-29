@@ -44,7 +44,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 30,
                 ),
-                reusableTextField("Enter Username", Icons.person_outline, false,
+                reusableTextField("Enter Email ID", Icons.person_outline, false,
                     _emailTextController),
                 SizedBox(
                   height: 20,
@@ -98,7 +98,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               width: 10,
                             ),
                             const Text(
-                              "Login with G-Mail",
+                              "Login with Google",
                               style: TextStyle(
                                   fontSize: 21,
                                   fontWeight: FontWeight.bold,
